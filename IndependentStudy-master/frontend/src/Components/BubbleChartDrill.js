@@ -95,7 +95,10 @@ class BubbleChartDrill extends  Component{
                 text: this.props.options.title
             },
 
-            series:  this.props.options.series,
+            series:  {
+                series : this.props.options.series,
+                boostThreshold : 1
+            },
 
             credits: {
                 text: '© 2020-2021 AndroGraphic San Francisco State University All Rights Reserved'
