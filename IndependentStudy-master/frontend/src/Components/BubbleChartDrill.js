@@ -187,6 +187,14 @@ class BubbleChartDrill extends  Component{
                     data: [2, 7]
                 }]
             } //this.props.options.drilldown*/
+			
+			boost: {
+                allowForce:true,
+                enabled: true,
+                useGPUTranslations: true,
+                usePreallocated: true,
+                
+            }
         }
 
         return (
