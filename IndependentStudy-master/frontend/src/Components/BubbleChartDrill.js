@@ -4,7 +4,8 @@ import HighchartsReact from 'highcharts-react-official';
 import HighchartsExporting from 'highcharts/modules/exporting'
 import More from 'highcharts/highcharts-more'
 import drilldown from "highcharts/modules/drilldown.js";
-
+import Boost from 'highcharts/modules/boost';
+import BoostCanvas from 'highcharts/modules/boost-canvas';
 
 
 if (typeof Highcharts === 'object') {
@@ -13,6 +14,8 @@ if (typeof Highcharts === 'object') {
 
 More(Highcharts)
 drilldown(Highcharts);
+Boost(Highcharts);
+BoostCanvas(Highcharts);
 
 class BubbleChartDrill extends  Component{
 
@@ -27,8 +30,8 @@ class BubbleChartDrill extends  Component{
     }
 
     render(){
-
-        if(this.props.options.drag == true){
+        console.log("INSIDE BUBBLECHARTDRILL.JS")
+        if(this.props.options.drag === true){
             this.refs["bubble"].chart.reflow();
         }
 
@@ -46,11 +49,11 @@ class BubbleChartDrill extends  Component{
                 events: {
                     render: function() {
                         if(self.props.options.series && self.props.options.series.length > 0
-                            &&  self.refs["bubble"] && self.refs["bubble"].chart.series.length > 0 && self.props.options.shrinkLabel == true){
+                            &&  self.refs["bubble"] && self.refs["bubble"].chart.series.length > 0 && self.props.options.shrinkLabel === true){
                             self.refs["bubble"].chart.series.forEach(series => {
                                 series.points.forEach(point => {
 
-                                    if (point.dataLabel != undefined && point.graphic.width > 1) {
+                                    if (point.dataLabel !== undefined && point.graphic.width > 1) {
                                         if (point.dataLabel.width > point.graphic.width) {
                                             let indic = (
                                                     (point.dataLabel.width - point.graphic.width) /
@@ -66,7 +69,7 @@ class BubbleChartDrill extends  Component{
 
                                             dotted = maxTextLen > 2 ? '..' : '.';
                                             substringLen = maxTextLen > 2 ? 2 : 0;
-                                            if(dotted == '..')
+                                            if(dotted === '..')
                                                  newText = text.substring(0, maxTextLen - substringLen) + dotted;
                                             else
                                                 newText = ''
@@ -125,7 +128,7 @@ class BubbleChartDrill extends  Component{
                         filter: {
                             property: 'y',
                             operator: '>',
-                            value: this.props.options.labelLimit != undefined ? this.props.options.labelLimit : 100
+                            value: this.props.options.labelLimit !== undefined ? this.props.options.labelLimit : 100
                         },
                         style: {
                             color: 'black',
@@ -187,14 +190,15 @@ class BubbleChartDrill extends  Component{
                     data: [2, 7]
                 }]
             } //this.props.options.drilldown*/
-			
-			boost: {
+
+            boost: {
                 allowForce:true,
                 enabled: true,
                 useGPUTranslations: true,
                 usePreallocated: true,
-                
+
             }
+
         }
 
         return (
