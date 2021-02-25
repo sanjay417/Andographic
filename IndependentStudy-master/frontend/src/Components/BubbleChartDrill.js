@@ -97,7 +97,7 @@ class BubbleChartDrill extends  Component{
 
             series:  {
                 series : this.props.options.series,
-                boostThreshold : 1
+                boostThreshold : 2000
             },
 
             credits: {
