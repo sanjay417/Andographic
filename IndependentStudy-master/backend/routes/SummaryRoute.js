@@ -85,10 +85,32 @@ module.exports = function (app) {
 
 
     app.get("/api/devAppCountAll", function (req, res) {
+        console.log("INSIDE DEVELOPER COUNT")
         let {pids, genre, index, vtdetections} =req.query;
         SummaryController.getDeveloperAndAppCountAll(genre, index, vtdetections).then((data)=>{
+            console.log("DATA -> ", data)
+            // console.log("DATA LENGTH -> ", data.length)
+            // i = 0;
+            // dl = data.length;
+
             res.set({ 'content-type': 'application/json; charset=utf-8' });
             res.end(JSON.stringify({ data}));
+
+            // while (i <= dl-1){
+            //     arr= []
+            //     for (j=0; j<= 9; j++){   
+            //         // console.log(data[i])
+            //         arr.push(data[i]);
+            //         i++
+            //     }
+
+            //     console.log("array",arr,i,dl)
+            //     res.send(JSON.stringify({ arr}));
+            // }
+            // res.end();
+
+           
+            
         }).catch((err)=>{
             res.status(500).end();
             console.log(err)
@@ -129,11 +151,14 @@ module.exports = function (app) {
     app.get("/api/populateBenignMaliciousCountByGenre", function (req, res) {
         let {genre} =req.query;
         SummaryController.getBenignMaliciousCountByGenre(genre).then((data)=>{
+
             res.send(data)
         }).catch((err)=>{
             res.status(500).end();
             console.log(err)
         })
+        
+                    
     });
 
     app.get("/api/download", function (req, res) {

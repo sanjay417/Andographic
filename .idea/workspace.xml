@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ec77566-c218-4dee-ad9c-baf82b7690f1" name="Default Changelist" comment="" />
+    <list default="true" id="6ec77566-c218-4dee-ad9c-baf82b7690f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/AndrographicML-main/ML.py" beforeDir="false" afterPath="$PROJECT_DIR$/AndrographicML-main/ML.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndrographicML-main/model.sav" beforeDir="false" afterPath="$PROJECT_DIR$/AndrographicML-main/model.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/ConnectionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/ConnectionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/SummaryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/SummaryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/TechnicalController.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/TechnicalController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/routes/SummaryRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/routes/SummaryRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/BubbleChartDrill.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/BubbleChartDrill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/summary/Overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/summary/Overview.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="f13371ba-cb65-4a1b-993d-51ad27d0842b" />
   <component name="ProjectId" id="1osHfXDZB8QMyq1ZEuZtns8u9nL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,6 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614068484157</updated>
       <workItem from="1614068485388" duration="38000" />
+      <workItem from="1618261279903" duration="5000" />
     </task>
     <servers />
   </component>

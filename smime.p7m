@@ -1,0 +1,79 @@
+Content-Type: multipart/signed; boundary="nextPart3541424.kBKqGx8QmS";
+	micalg=pgp-sha512; protocol="application/pgp-signature"
+
+--nextPart3541424.kBKqGx8QmS
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
+
+Dear Tejal Ghadge,
+
+Thanks for your interest in our dataset !
+
+Your API key is :
+cdf24244a98a8a1fe3eb4af8720071741aef88a9863079ecd347c5600e707d46
+
+Documentation for the API is available at https://androzoo.uni.lu/api_doc
+
+Note: API key is case sensitive.
+
+Be sure you reference this article when you use this dataset for your 
+research:
+    - https://orbilu.uni.lu/bitstream/10993/27396/1/androzoo.pdf
+       (doi: http://dx.doi.org/10.1145/2901739.2903508 )
+
+To download a bunch of apps for one run, you may want to try the app:
+    - https://github.com/ArtemKushnerov/az
+
+Please feel free to contact us at androzoo@uni.lu for any question.
+
+We also welcome suggestions on features to add to the website.
+
+If you want to filter apps on data that is not present in the csv file at
+https://androzoo.uni.lu/lists  let us know, we may have this info somewhere
+(or we might obtain it if that's not too much work).
+
+Best Regards,
+++
+Kevin
+
+
+
+On Monday, September 14, 2020, 9:35:57 PM CEST Tejal Rajendra Ghadge wrote:
+> Hello,
+> 
+> I am a grad student at San Francisco State University. I am working on one research project with my professor and wanted to study AndroZoo dataset.
+> We aim to develop a tool to get better security insights of android applications. I was wondering if it is possible to get access to this dataset for our research project.
+> Please let me know if any other details are required.
+> I hope to hear from you soon.
+> Thank you!
+> 
+> Regards,
+> Tejal Ghadge
+> 
+> 
+> 
+> 
+> 
+-- 
+Dr. Kevin Allix
+Research Associate
+SnT, University of Luxembourg
++352 46 66 44 5720
+--nextPart3541424.kBKqGx8QmS
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEKTI6ynwAyDd2EZG6ZYMXp/OpqX4FAl9kzGIACgkQZYMXp/Op
+qX45CAgA1mVhcE+J1eLC6iP0FrSEtPNGljXDz0plhU7/rVeU47mtY1THPBw/uCMq
+BUHSS5eqbdfBDvCsYRSK0T9L/clga6kEpoR/h7G4at+9nKdSIvoQwLXOxMGe9q0D
+w8W7vjXffnT3zCMKPX0trOtA329UHvS2S+WLaMtx7UdlfiWEoTlB/Ts+Prl2sjes
+3/EdIozcBNkrOrYpu2BdBvuY8DtUA6ak6LTbvhIQVNfjr2d0Wq87mlhWk7zHgtqE
+mROCtO4hqqUxYbHdc1JSV6IhI95o4ueEEGUvFiztbZjbJE1ED6SJomVmaFTZwlBn
+KALqzdNoY5ALdwClefDFIg9RdGLLLw==
+=1GY2
+-----END PGP SIGNATURE-----
+
+--nextPart3541424.kBKqGx8QmS--

@@ -4,7 +4,6 @@ import BarChart from './Components/Chart';
 import Button from "@material-ui/core/Button";
 import Layout from "./Components/Layout";
 
-
 class App extends Component {
 
   constructor(props) {

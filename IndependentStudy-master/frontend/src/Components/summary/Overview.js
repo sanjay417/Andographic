@@ -77,9 +77,7 @@
                 actionCloudSeries: [],
                 maliciousPercent: 0,
                 benignPercent: 0,
-                rangeValue: [20, 30]
-
-
+                rangeValue: [20, 30],
             }
 
 
@@ -103,9 +101,9 @@
                 this.populateSystemActions();
             }
 
-            if(this.state.devAppCount.length == 0){
-                this.populateDevAppData(this.state.index)
-            }
+            // if(this.state.devAppCount.length == 0){
+            //     this.populateDevAppData(this.state.index)
+            // }
 
         };
 
@@ -118,6 +116,7 @@
                     value: entry.vtdetection,
                     label: entry.vtdetection,
                 }))
+                console.log("RESULT -> ", dataSuggestions)
                this.setState({vtdetectionSuggestions: dataSuggestions})
             }).then(()=>{
                 this.populateData(this.state.index);
@@ -164,21 +163,21 @@
             })
         };
 
-        populateDevAppData =(index, genreFilter) =>{
+         populateDevAppData = (index, genreFilter) =>{
             this.populateDevAppCount("/api/devAppCountAll", this.state.vtdetections, genreFilter, index);
-           /* switch (index) {
-                case "All":
+            // switch (index) {
+            //     case "All":
 
-                    break;
-                case "Malicious":
-                    //this.populateDevAppCount("/api/devAppCountMalicious", this.state.vtdetections, genreFilter);
-                    this.populateDevAppCount("/api/devAppCountAll", this.state.vtdetections, genreFilter, index);
-                    break;
-                case "Benign":
-                    //this.populateDevAppCount("/api/devAppCountBenign", this.state.vtdetections, genreFilter);
-                    this.populateDevAppCount("/api/devAppCountAll", this.state.vtdetections, genreFilter, index);
-                    break;
-            }*/
+            //         break;
+            //     case "Malicious":
+            //         this.populateDevAppCount("/api/devAppCountMalicious", this.state.vtdetections, genreFilter);
+            //         // this.populateDevAppCount("/api/devAppCountAll", this.state.vtdetections, genreFilter, index);
+            //         break;
+            //     case "Benign":
+            //         this.populateDevAppCount("/api/devAppCountBenign", this.state.vtdetections, genreFilter);
+            //         // this.populateDevAppCount("/api/devAppCountAll", this.state.vtdetections, genreFilter, index);
+            //         break;
+            // }
         }
 
         populateActionData =(index, pids, genreFilter) =>{
@@ -234,17 +233,38 @@
             if(index == "Malicious" && vtdetections.length == 0)
                 return;
 
-
+            //     let dataToPlot = []
+            //     this.setState({devRotate : true})
+            //     let url =  path1 + '?vtdetections='+ vtdetections + "&genre="+genreFilter+"&index="+index;
+            //     console.log("DEVAPP -> ", url)
+            //     axios.get(url).then((result)=>{
+            //         console.log("RESULT -> ", result.data)
+            //         this.setState({devRotate : false})
+            //         this.setState({devAppCount: result.data});
+            //         this.setState({devCount: result.data.length})
+            //         dataToPlot =  result.data;
+            //         console.log("devCount -> ", this.state.devCount)
+            //         console.log("devAppCount -> ", this.state.devAppCount)
+            //         //console.log("DATA TO PLOT -> ", dataToPlot)
+            //     }).then(()=>{
+            //         this.plotDevGraph(dataToPlot);
+            //     }). catch((err)=>{
+            //         console.log(err)
+            //     })
+            // }
             let dataToPlot = []
             this.setState({devRotate : true})
             let url =  path1 + '?vtdetections='+ vtdetections + "&genre="+genreFilter+"&index="+index;
+            console.log("DEVAPP -> ", url)
             axios.get(url).then((result)=>{
                 this.setState({devRotate : false})
                 this.setState({devAppCount: result.data.data});
                 this.setState({devCount: result.data.data.length})
                 dataToPlot =  result.data.data;
+                console.log("RESULT -> ", this.state.devAppCount)
+                console.log("LENGTH -> ", this.state.devCount)
             }).then(()=>{
-                this.plotDevGraph(dataToPlot);
+                this.plotDevGraph(dataToPlot); 
             }). catch((err)=>{
                 console.log(err)
             })
@@ -258,6 +278,7 @@
 
             this.setState({actionRotate : true})
             let url =  path1 + '?pids='+ pids.join() + '&vtdetections='+ vtdetections+"&genre="+genreFilter+"&index="+index;
+            console.log("URL -> ", url)
             axios.get(url).then((result)=>{
                 this.setState({actionRotate : false})
                 //this.setState({actionCount: result.data});

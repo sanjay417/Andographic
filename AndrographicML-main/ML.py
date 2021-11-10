@@ -13,10 +13,12 @@ labelencoder = LabelEncoder()
 
 
 def create_connection():
+    print("CONNECTING")
     sqlEngine = create_engine(
-        'mysql+pymysql://root:AndPro#123456#@migratedandroiddata.cjmdjafniitu.us-west-1.rds.amazonaws.com/AndroidDatabaseFull',
+        'mysql+pymysql://root:AndPro#123456#@andrographicboost.cjpyjmrhqjw4.us-west-1.rds.amazonaws.com/AndroidDatabaseFull',
         pool_recycle=36000)
     dbConnection = sqlEngine.connect()
+    print("CONNECTED")
     return dbConnection
 
 def populate_data_v1(rows):

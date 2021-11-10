@@ -883,7 +883,7 @@ module.exports = {
     getDistinctVTDetection : ()=>{
         return new Promise(function(resolve, reject) {
             let connection = ConnectionController.createConnection();
-            connection.query('select distinct vtdetection from technical where vtdetection <> 0' , (err, results) => {
+            connection.query('SELECT distinct vtdetection FROM technical where vtdetection<> 0' , (err, results) => {
                 connection.end();
                 if (err) {
                     reject(err)

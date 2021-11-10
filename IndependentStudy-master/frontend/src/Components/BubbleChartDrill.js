@@ -1,4 +1,4 @@
-import React, {Component, useRef} from 'react';
+import React, {Component} from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsExporting from 'highcharts/modules/exporting'
@@ -37,7 +37,7 @@ class BubbleChartDrill extends  Component{
 
         let self = this;
         let configMap = {
-
+            
             xAxis: {
                 type: 'category'
             },

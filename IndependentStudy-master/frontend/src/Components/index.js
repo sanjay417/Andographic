@@ -1,3 +1,4 @@
+import FileUploadPage from './upload/FileUploadPage'
 import CategoryTabs from './CategoryTabs';
 import DeveloperDropDown from './DeveloperDropDown';
 import DeveloperView from './DeveloperView';
@@ -82,6 +83,7 @@ import ScatterHeatChart from './ScatterHeatChart'
 import BubbleChartBoostDrill from './BubbleChartBoostDrill'
 
 export {
+    FileUploadPage,
     CategoryTabs,
     DeveloperDropDown,
     DeveloperView,

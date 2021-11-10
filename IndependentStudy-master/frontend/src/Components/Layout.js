@@ -12,7 +12,9 @@ import StorageIcon from '@material-ui/icons/Storage';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import GradientIcon from '@material-ui/icons/Gradient';
+import AnalyticsSharpIcon from '@mui/icons-material/AnalyticsSharp';
 import {
+    FileUploadPage,
     CategoryTabs,
     TableView,
     ReactTable,
@@ -254,6 +256,11 @@ export default function MiniDrawer() {
                             <ListItemText primary={'Upload/Download'}/>
                         </ListItem>
 
+                        <ListItem button key={'Analysis'} component = {Link} to={"/FileUploadPage"}>
+                            <ListItemIcon> <AnalyticsSharpIcon/></ListItemIcon>
+                            <ListItemText primary={'Analysis'}/>
+                        </ListItem>
+
                         <ListItem button key={'Classification'} component = {Link} to={"/Classification"}>
                             <ListItemIcon> <WidgetsIcon/></ListItemIcon>
                             <ListItemText primary={'Classification'}/>
@@ -268,6 +275,7 @@ export default function MiniDrawer() {
                 <main className={classes.content}>
                     <div className={classes.toolbar}/>
                     <Switch>
+                        <Route exact path={'/FileUploadPage'}  component = {() => <FileUploadPage options={data} />}/>
                         <Route exact path={'/Correlation'}  component = {() => <Correlation options={data} />}/>
                         <Route exact path={'/Confirmation'}  component = {() => <Confirmation options={data} />}/>
                         <Route exact path={'/RegisterUser'}  component = {() => <RegisterUser options={data} />}/>

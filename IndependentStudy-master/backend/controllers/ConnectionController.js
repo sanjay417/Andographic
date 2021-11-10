@@ -1,4 +1,6 @@
 const mysql = require('mysql');
+
+
 module.exports = {
 
     createConnectionPool: ()=>{
@@ -9,7 +11,7 @@ module.exports = {
             host :'andrographic.cjpyjmrhqjw4.us-west-1.rds.amazonaws.com',
             user     : 'root',
             password : 'AndPro#123456#',
-            database : 'AndroidDatabaseFull',
+            database : 'AndroidDatabaseFull',   
             debug    :  false,
             multipleStatements: true,
             acquireTimeout: 30000

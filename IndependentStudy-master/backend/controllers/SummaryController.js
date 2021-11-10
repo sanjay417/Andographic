@@ -40,6 +40,7 @@ module.exports = {
 
             const connection = ConnectionController.createConnection();
             let sql = 'select genre, count(*) as total from technical '+sqlFilter+' group by Genre';
+            console.log("SQL QUERY -> ", sql)
             connection.query(sql ,(err,results)=>{
                 connection.end();
                 if(err){
@@ -279,9 +280,8 @@ module.exports = {
             }
 
             let sql = 'select count(*) as total, DeveloperName as name from technical'+genreFilter+sqlFilter + ' group by DeveloperName;'
-
+            console.log("SQL -> ", sql)
             connection.query(sql,(err,results)=>{
-                console.log(sql);
                 connection.end();
                 if(err){
                     reject(err)
