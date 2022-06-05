@@ -35,6 +35,7 @@ export default class DevPermissionView extends Component {
     populateDevelopers =() =>{
         axios.get('/api/getDeveloperAndAppCount').then((result)=>{
             this.setState({devAppAndCount: result.data});
+            console.log("devPermissionView", result)
             const dataSuggestions = result.data.map(dev => ({
                 value: dev.DeveloperName != null ? dev.DeveloperName : "",
                 label: dev.DeveloperName != null ? dev.DeveloperName : ""

@@ -8,11 +8,11 @@ const app = express()
 
 module.exports = function(app) {
 
-    app.post("/api/uploadApk", upload.single('file'), async (req, res) => {
+    app.post("/api/u", upload.single('file'), async (req, res) => {
 
         const file = req.file
         console.log(file)
-
+                                                                                                                    
         if(file === null){
             return res.status(400).json({msg:'No file uploaded'})
         }

@@ -14,6 +14,9 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import GradientIcon from '@material-ui/icons/Gradient';
 import AnalyticsSharpIcon from '@mui/icons-material/AnalyticsSharp';
 import {
+    dynamicAnalyzer,
+    scoreCard,
+    staticAnalyzer,
     FileUploadPage,
     CategoryTabs,
     TableView,
@@ -240,7 +243,6 @@ export default function MiniDrawer() {
                             <ListItemText primary={'Resources'}/>
                         </ListItem>
 
-
                         <ListItem button key={'RegisterUser'} component = {Link} to={"/RegisterUser"}>
                             <ListItemIcon> <PersonAddIcon/></ListItemIcon>
                             <ListItemText primary={'RegisterUser'}/>
@@ -275,6 +277,9 @@ export default function MiniDrawer() {
                 <main className={classes.content}>
                     <div className={classes.toolbar}/>
                     <Switch>
+                        <Route exact path={'/dynamicAnalyzer'}  component = { dynamicAnalyzer }/>
+                        <Route exact path={'/scoreCard'}  component = { scoreCard }/>
+                        <Route exact path={'/staticAnalyzer'}  component = { staticAnalyzer }/>
                         <Route exact path={'/FileUploadPage'}  component = {() => <FileUploadPage options={data} />}/>
                         <Route exact path={'/Correlation'}  component = {() => <Correlation options={data} />}/>
                         <Route exact path={'/Confirmation'}  component = {() => <Confirmation options={data} />}/>

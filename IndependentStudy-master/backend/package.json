@@ -21,13 +21,15 @@
     "mysql": "^2.18.1",
     "pug": "^3.0.2",
     "react": "^17.0.2",
+    "react-json-prettify": "^0.2.0",
+    "react-json-pretty": "^2.2.0",
     "react-loadable": "^5.5.0",
     "wkhtmltopdf": "^0.3.4"
   },
   "devDependencies": {
     "express-pino-logger": "^4.0.0",
     "node-env-run": "^4.0.2",
-    "nodemon": "^2.0.14",
+    "nodemon": "^2.0.16",
     "npm-run-all": "^4.1.5",
     "pino-colada": "^1.6.1"
   }

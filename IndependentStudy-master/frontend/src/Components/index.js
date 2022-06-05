@@ -81,8 +81,13 @@ import ScatterChart from './ScatterChart'
 import Correlation from './Correlation'
 import ScatterHeatChart from './ScatterHeatChart'
 import BubbleChartBoostDrill from './BubbleChartBoostDrill'
-
+import staticAnalyzer from './upload/staticAnalyzer';
+import scoreCard from './upload/scoreCard';
+import dynamicAnalyzer from './upload/dynamicAnalyzer';
 export {
+    dynamicAnalyzer,
+    scoreCard,
+    staticAnalyzer,
     FileUploadPage,
     CategoryTabs,
     DeveloperDropDown,

@@ -9,5 +9,5 @@ module.exports = function (app) {
   contextualRoute(app);
   technicalRoute(app);
   predictRoute(app);
-  analyzerRoute(app)
+  analyzerRoute(app);
 }

@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import Message from './Message';
 import Progress from './Progress';
 import axios from 'axios';
-
+import {Redirect} from 'react-router-dom'
 
 const FileUpload = () => {
   const [file, setFile] = useState('');
@@ -10,6 +10,9 @@ const FileUpload = () => {
   const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
+  const [red, setRed] = useState(null);
+
+
 
   const onChange = e => {
     setFile(e.target.files[0]);
@@ -20,9 +23,9 @@ const FileUpload = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
-
+    console.log(formData)
     try {
-      const res = await axios.post('/api/uploadApk', formData, {
+      await axios.post('/api2/staticAnalysis', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -33,14 +36,20 @@ const FileUpload = () => {
             )
           );
         }
-      });
-      
+      }).then(res => {
+        console.log(res.data);
+        setRed(<Redirect to={{
+          pathname: '/staticAnalyzer',
+          state: { data: res.data }
+      }}/>)
+      })
+          
       // Clear percentage
       setTimeout(() => setUploadPercentage(0), 10000);
 
-      const { fileName, filePath } = res.data;
+      // const { fileName, filePath } = res.data;
 
-      setUploadedFile({ fileName, filePath });
+      // setUploadedFile({ fileName, filePath });
 
       setMessage('File Uploaded');
     } catch (err) {
@@ -52,10 +61,12 @@ const FileUpload = () => {
       setUploadPercentage(0)
     }
   };
-
+  console.log("red",red);
   return (
     <Fragment>
+      
       {message ? <Message msg={message} /> : null}
+      {red}
       <form onSubmit={onSubmit}>
         <div className='custom-file mb-4'>
           <input
@@ -85,6 +96,8 @@ const FileUpload = () => {
           </div>
         </div>
       ) : null}
+
+      
     </Fragment>
   );
 };

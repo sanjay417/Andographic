@@ -34,9 +34,10 @@ export default class DeveloperAppsView extends Component {
         this.populateDevelopers();
     };
 
-    populateDevelopers =() =>{
+    populateDevelopers(){
         axios.get('/api/getDeveloperAndAppCount').then((result)=>{
             this.setState({devAppAndCount: result.data});
+            console.log("appview",result)
             const dataSuggestions = result.data.map(dev => ({
                 value: dev.DeveloperName != null ? dev.DeveloperName : "",
                 label: dev.DeveloperName != null ? dev.DeveloperName : ""
@@ -47,7 +48,7 @@ export default class DeveloperAppsView extends Component {
         })
     }
 
-    plotGraph = () =>{
+    plotGraph(){
         let series = [
             {name: "Permissions ", data : []},
             {name: "System Actions", data : []}
@@ -67,7 +68,7 @@ export default class DeveloperAppsView extends Component {
 
     }
 
-    populateSystemActions =(developer)=>{
+    populateSystemActions(developer){
         axios.get('/api/getSystemActionsCountByDeveloper?developer='+encodeURIComponent(developer)).then((result)=>{
             this.setState({systemActionsCount: result.data});
         }).
@@ -79,7 +80,7 @@ export default class DeveloperAppsView extends Component {
         })
     }
 
-    populateDevPermissionCount =(developer)=>{
+    populateDevPermissionCount (developer){
 
           axios.get('/api/getPermissionUsageByDeveloper?developer='+encodeURIComponent(developer)).then((result)=>{
             this.setState({appsAndPermissions: result.data});
@@ -90,7 +91,7 @@ export default class DeveloperAppsView extends Component {
         })
     }
 
-    changeDevDropDown =(result) =>{
+    changeDevDropDown(result){
 
         if(!result){
             this.setState({graphData: []})
@@ -101,13 +102,13 @@ export default class DeveloperAppsView extends Component {
 
     }
 
-    filterSuggestions=(filterString) =>{
+    filterSuggestions(filterString){
         const matches = this.state.suggestionsAll.filter(s => s.label.toLowerCase().includes(filterString.toLowerCase()));
         this.setState({suggestions : matches});
         this.setState({filter : filterString});
     }
 
-    download =()=>{
+    download (){
         if(this.state.graphData && this.state.graphData.length != 0){
             d3_save_pdf.save(d3.select('#chartDevCanvas svg').node(), {filename: 'AndroidDataInsight'});
             //d3_save_pdf.embedRasterImages(d3.select('#chartDevCanvas svg').node());
@@ -125,7 +126,7 @@ export default class DeveloperAppsView extends Component {
 
         }
 
-        const dropDownOptions ={
+        const dropDownOptions = {
             suggestions : this.state.suggestions,
             title: "Select Developer"
         }

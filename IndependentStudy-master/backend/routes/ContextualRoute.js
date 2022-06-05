@@ -26,6 +26,7 @@ module.exports = function (app) {
   app.get("/api/getDeveloperAndAppCount", function (req, res) {
         const {vtdetections, count} = req.query;
         ContextualController.getDeveloperAndAppCount(vtdetections, count).then((data)=>{
+            console.log(data)
             res.send(data)
         }).catch((err)=>{
             res.status(500).end();
@@ -61,5 +62,15 @@ module.exports = function (app) {
               console.log(err)
           })
     });
+
+    app.get("/api/getDeveloperApps", function(req, res){
+        const {developer} = req.query;
+        ContextualController.getDeveloperApps(developer).then((data) =>{
+            res.send(data)
+        }).catch((err) =>{
+            res.status(500).end();
+            console.log(err)
+        })
+    }); 
 
 }

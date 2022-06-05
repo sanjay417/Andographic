@@ -51,6 +51,7 @@ export default class DeveloperView extends Component {
 
         axios.get('/api/getDeveloperAndAppCount?vtdetections='+vtdetections).then((result)=>{
             this.setState({devAppAndCount: result.data});
+            console.log("developerView", result)
             const dataSuggestions = result.data.map(dev => ({
                 value: dev.DeveloperName != null ? dev.DeveloperName : "",
                 label: dev.DeveloperName != null ? dev.DeveloperName : ""

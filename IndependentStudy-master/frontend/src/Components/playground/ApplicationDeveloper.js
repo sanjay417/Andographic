@@ -49,7 +49,8 @@ export default class ApplicationDeveloper extends Component {
             heatMapSeries: [],
             chartType: "column",
             rotate: false,
-            rangeValue: [4, 6]
+            rangeValue: [4, 6],
+            apps: []
 
         }
     }
@@ -87,16 +88,16 @@ export default class ApplicationDeveloper extends Component {
             xAxis.push(developer.DeveloperName);
             element.data.push(developer.cnt);
             pieElement.data.push({name: developer.DeveloperName, y: developer.cnt});
-            bubbleSeries[0].data.push({name: developer.DeveloperName, value: developer.cnt});
+            bubbleSeries[0].data.push({name: developer.DeveloperName, value: developer.cnt, apps:this.state.apps});
         }
-
+        console.log("apps", this.state.apps)
         series.push(element);
         pieSeries.push(pieElement);
-
         this.setState({pieSeries: pieSeries});
         this.setState({bubbleSeries: bubbleSeries});
         this.setState({series: series});
         this.setState({xAxis: xAxis});
+        console.log("bubbleseries", this.state.bubbleSeries)
     }
 
 
@@ -112,8 +113,8 @@ export default class ApplicationDeveloper extends Component {
         const devAppCount = this.state.devAppAndCount.filter(function (data) {
             return result.includes(data.DeveloperName);
         });
-
-        this.setState({filteredDevAppCount : devAppCount});
+        console.log("devapp", devAppCount)
+                
 
         let i ;
         var developers = [];
@@ -122,10 +123,20 @@ export default class ApplicationDeveloper extends Component {
         }
 
         var developers = developers.join();
-        this.plotGraph(devAppCount);
-        //this.populateDevPermissionCount(developers, this.state.vtdetectionsFilter.join());
+        axios.get('/api/getDeveloperApps?developer=' + developers).then((result)=>{
+            const appTitles = []
+            result.data.forEach(titles => {
+                appTitles.push(titles['title'])
+            })
+            this.setState({apps : appTitles})
+            this.plotGraph(devAppCount);
+        }).catch((err)=>{
+            console.log(err)
+        })
 
-    }
+        //this.populateDevPermissionCount(developers, this.state.vtdetectionsFilter.join());
+    
+}
 
 
 
@@ -211,7 +222,7 @@ export default class ApplicationDeveloper extends Component {
             case "column":  return <GroupColumnChart options = {chartOptions} />;
             case "heat": return <HeatMap options = {heatMapOptions}/>;
             case "pie" : return  <PieChart options = {pieChartOptions} />
-            case  "bubble" : return <BubbleChart options = {bubbleChartOptions} />
+            case "bubble" : return <BubbleChart options = {bubbleChartOptions} />
         }
 
     }

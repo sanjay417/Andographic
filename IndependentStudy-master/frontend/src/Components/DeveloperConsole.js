@@ -61,9 +61,10 @@ export default class GenreSystemActionsView extends Component{
         let decoded = decodeURIComponent(query[1])
     };
 
-    populateDevelopers =() =>{
+    populateDevelopers () {
         axios.get('/api/getDeveloperAndAppCount').then((result)=>{
             this.setState({devAppAndCount: result.data});
+            console.log("console", result)
             const dataSuggestions = result.data.map(dev => ({
                 value: dev.DeveloperName != null ? dev.DeveloperName : "",
                 label: dev.DeveloperName != null ? dev.DeveloperName : ""
@@ -75,7 +76,7 @@ export default class GenreSystemActionsView extends Component{
     }
 
     //populates the data for permissions bar chart
-    populatePermissions = (developer) => {
+    populatePermissions (developer)  {
 
         axios.get(`/api/getDevConsolePermissions?developer=${developer}`)
             .then((result)=>{
@@ -101,7 +102,7 @@ export default class GenreSystemActionsView extends Component{
             })
     }
 
-    populateRatings = (developer) => {
+    populateRatings (developer)  {
         axios.get(`/api/getDevConsoleRatings?developer=${developer}`)
             .then((result)=>{
                 if(result != null && result.data != null && result.data[0] != null){
@@ -124,7 +125,7 @@ export default class GenreSystemActionsView extends Component{
             })
     }
 
-    populateAndroidVersion = (developer) => {
+    populateAndroidVersion  (developer)  {
         axios.get(`/api/getDevConsoleAndroidVersion?developer=${developer}`)
             .then((result)=>{
                 // console.log('Successfully got data from the request')
@@ -155,7 +156,7 @@ export default class GenreSystemActionsView extends Component{
             })
     }
 
-    populateGenre = (developer) => {
+    populateGenre (developer) {
         axios.get(`/api/getDevConsoleGenre?developer=${developer}`)
             .then((result)=>{
                 // console.log('Successfully got data from the request')
@@ -184,7 +185,7 @@ export default class GenreSystemActionsView extends Component{
             })
     }
 
-    populateContentRating = (developer) => {
+    populateContentRating (developer) {
         axios.get(`/api/getDevConsoleContentRating?developer=${developer}`)
             .then((result)=>{
                 if(result != null && result.data != null && result.data[0] != null){
@@ -223,7 +224,7 @@ export default class GenreSystemActionsView extends Component{
         })
     }*/
 
-    populateDevPermissionCount =(developer)=>{
+    populateDevPermissionCount (developer) {
         axios.get('/api/getPermissionUsageByDeveloper?developer='+encodeURIComponent(developer)).then((result)=>{
             this.setState({appsAndPermissions: result.data});
         }).then(()=>{
@@ -257,7 +258,7 @@ export default class GenreSystemActionsView extends Component{
         })
     }*/
 
-    populateSystemActions =(developer)=>{
+    populateSystemActions (developer) {
         axios.get('/api/getSystemActionsCountByDeveloper?developer='+encodeURIComponent(developer)).then((result)=>{
             this.setState({systemActionsCount: result.data});
         }).
@@ -284,7 +285,7 @@ export default class GenreSystemActionsView extends Component{
         })
     }
 
-    changeDevDropDown =(result, selectedVals) =>{
+    changeDevDropDown (result, selectedVals) {
         this.setState({dropDownSelectedVals : selectedVals});
         const devAppCount = this.state.devAppAndCount.filter(function (data) {
             return result == data.DeveloperName;
@@ -318,7 +319,7 @@ export default class GenreSystemActionsView extends Component{
         this.populateContentRating(result);
     }
 
-    filterSuggestions=(filterString) =>{
+    filterSuggestions(filterString) {
         const matches = this.state.suggestionsAll.filter(s => s.label.toLowerCase().includes(filterString.toLowerCase()));
         this.setState({suggestions : matches});
         this.setState({filter : filterString});
@@ -326,7 +327,7 @@ export default class GenreSystemActionsView extends Component{
         console.log(matches)
     }
 
-    removeChartCanvas = () =>{
+    removeChartCanvas () {
 
         let element = document.getElementById('chartCanvas1');
         if(element)

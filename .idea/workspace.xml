@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ec77566-c218-4dee-ad9c-baf82b7690f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AndrographicML-main/ML.py" beforeDir="false" afterPath="$PROJECT_DIR$/AndrographicML-main/ML.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndrographicML-main/model.sav" beforeDir="false" afterPath="$PROJECT_DIR$/AndrographicML-main/model.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/ConnectionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/ConnectionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/SummaryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/SummaryController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/TechnicalController.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/controllers/TechnicalController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AndrographicML-main/dynamicAnalyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/routes/SummaryRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/routes/SummaryRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/backend/routes/AnalyzerRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/backend/routes/AnalyzerRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/BubbleChartDrill.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/BubbleChartDrill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/summary/Overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/summary/Overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/upload/FileUploadPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/IndependentStudy-master/frontend/src/Components/upload/FileUploadPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/IndependentStudy-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -46,6 +43,7 @@
       <updated>1614068484157</updated>
       <workItem from="1614068485388" duration="38000" />
       <workItem from="1618261279903" duration="5000" />
+      <workItem from="1638423422611" duration="73000" />
     </task>
     <servers />
   </component>

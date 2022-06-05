@@ -98,4 +98,18 @@ module.exports = {
         })
     },
 
+    getDeveloperApps : (developer) => {
+        return new Promise(function(resolve, reject) {
+            const connection = ConnectionController.createConnection();
+            connection.query("SELECT title FROM contextual WHERE DeveloperName=" + developer ,(err,results)=>{
+                connection.end();
+                if(err){
+                    reject(err)
+                }
+                else {
+                    resolve(results)
+                }
+             })
+        })
+    },   
 }
