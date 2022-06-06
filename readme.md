@@ -1,4 +1,4 @@
-# Andographic
+# Andrographic
 
 There are three main servers to run - Mobsf, Node, Flask(Python). Described below are all the prerequisites and steps to run the same
 
