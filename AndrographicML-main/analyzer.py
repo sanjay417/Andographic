@@ -25,15 +25,15 @@ APIKEY = 'addc5c87e609dee41b490019d90d40291a604d6bc6d3a7efa3d4b2ad22de109a'
 
 def upload():
     """Upload File"""
+    app_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), "applications"))
     file = request.files['file']
-    file.save(file.filename)
-    s3.upload_file(
-        Bucket=AWS_BUCKET_NAME,
-        Filename=file.filename,
-        Key=file.filename)
+    file.save(os.path.join(app_dir, file.filename))
+    # s3.upload_file(
+    #     Bucket=AWS_BUCKET_NAME,
+    #     Filename=file.filename,
+    #     Key=file.filename)
 
-    print("Uploading file")
-    FILE = file.filename
+    FILE = app_dir + "\\" + file.filename
     multipart_data = MultipartEncoder(fields={'file': (FILE, open(FILE, 'rb'), 'application/octet-stream')})
     headers = {'Content-Type': multipart_data.content_type, 'Authorization': APIKEY}
     response = requests.post(SERVER + '/api/v1/upload', data=multipart_data, headers=headers)
@@ -53,7 +53,7 @@ def scan(data):
 @app.route("/api2/downloadPdf", methods=["POST"])
 def pdf():
     """Generate PDF Report"""
-    direc = (os.getcwd())
+    direc = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', "IndependentStudy-master", "frontend", "src", "assets", "applications", "pdfs"))
     scan_hash = request.get_json()['scan_hash']
     print("Generate PDF report")
     headers = {'Authorization': APIKEY}
@@ -61,9 +61,9 @@ def pdf():
     file_name = str(scan_hash) + "_report.pdf"
     print(file_name)
     response = requests.post(SERVER + '/api/v1/download_pdf', data=data, headers=headers, stream=True)
-    path = direc + "\\reports\\" + file_name
+    path = direc + "\\" + file_name
     print(path)
-    with open("reports\\" + file_name, 'wb') as flip:
+    with open(path, 'wb') as flip:
         for chunk in response.iter_content(chunk_size=1024):
             if chunk:
                 flip.write(chunk)

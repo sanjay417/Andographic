@@ -1,5 +1,7 @@
 # Andrographic
 
+The goal of this tool is to assist other researchers in analyzing various security elements of Android applications by creating custom charts, reviewing in-built summary charts, and identifying trends by obtaining knowledge from the correlation between various metrics the application's harmful nature. In addition to this, we added static and dynamic analyses of applications to take it to the next level and provide users with all the information necessary to determine whether an application belongs to the benign class or the malicious class by using a penetration testing framework known as “MOBSF”.   
+
 There are three main servers to run - Mobsf, Node, Flask(Python). Described below are all the prerequisites and steps to run the same
 
     MobSF
@@ -21,8 +23,6 @@ There are three main servers to run - Mobsf, Node, Flask(Python). Described belo
             Install JDK 8+ sudo apt-get install openjdk-8-jdk
             Install the following dependencies
             sudo apt install python3-dev python3-venv python3-pip build-essential libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev wkhtmltopdf
-            Copy to clipboardErrorCopied
-            Windows App Static analysis requires a Windows Host or Windows VM for Mac and Linux. More Info
 
         Windows
             Install Git
