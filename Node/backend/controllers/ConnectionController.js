@@ -8,9 +8,9 @@ module.exports = {
         let pool      =    mysql.createPool({
             connectionLimit : 60,
             //host :'migratedandroiddata.cjmdjafniitu.us-west-1.rds.amazonaws.com',
-            host :'andrographic.cjpyjmrhqjw4.us-west-1.rds.amazonaws.com',
+            host :process.env.MYSQL_HOST,
             user     : 'root',
-            password : 'AndPro#123456#',
+            password : process.env.MYSQL_PASSWORD,
             database : 'AndroidDatabaseFull',   
             debug    :  false,
             multipleStatements: true,
@@ -24,9 +24,9 @@ module.exports = {
     createConnection : ()=> {
         return mysql.createConnection({
             //host: 'andrographic.cjpyjmrhqjw4.us-west-1.rds.amazonaws.com',
-            host: 'andrographicboost.cjpyjmrhqjw4.us-west-1.rds.amazonaws.com',
+            host: process.env.MYSQL_HOST,
             user: "root",
-            password : 'AndPro#123456#',
+            password : process.env.MYSQL_PASSWORD,
             database : 'AndroidDatabaseFull',
             port:3306
         });

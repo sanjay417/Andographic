@@ -1,3 +1,5 @@
+import os
+
 import pymysql
 import time
 import pandas as pd
@@ -15,11 +17,12 @@ labelencoder = LabelEncoder()
 def create_connection():
     print("CONNECTING")
     sqlEngine = create_engine(
-        'mysql+pymysql://root:AndPro#123456#@andrographicboost.cjpyjmrhqjw4.us-west-1.rds.amazonaws.com/AndroidDatabaseFull',
+        'mysql+pymysql://root:' + os.getenv("MYSQL_PASSWORD") + os.getenv("MYSQL_PASSWORD"),
         pool_recycle=36000)
     dbConnection = sqlEngine.connect()
     print("CONNECTED")
     return dbConnection
+
 
 def populate_data_v1(rows):
     connection = create_connection()
@@ -28,6 +31,7 @@ def populate_data_v1(rows):
     result = pd.DataFrame(frame1)
     connection.close()
     return result
+
 
 def populate_data(rows):
     connection = create_connection()
