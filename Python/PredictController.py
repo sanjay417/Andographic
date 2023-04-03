@@ -1,5 +1,4 @@
 import traceback
-
 from flask import Flask, json
 import pandas as pd
 import ML as helper
@@ -11,9 +10,6 @@ from flask import request
 companies = [{"id": 1, "name": "Company One"}, {"id": 2, "name": "Company Two"}]
 
 api = Flask(__name__)
-
-
-
 
 def clean_data(df):
     df = helper.preprocess(df)
